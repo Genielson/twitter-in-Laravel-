@@ -271,12 +271,12 @@
                 <div class="box-share">
                   <p class="txt-share"><strong>Who to follow</strong></p>
                   <?php
-                  foreach($who_users as $user) {
+                 // foreach($who_users as $user) {
                     //  $u = User::getData($user->user_id);
-                     $user_follow = Follow::isUserFollow($user_id , $user->id) ;
+                   //  $user_follow = Follow::isUserFollow($user_id , $user->id) ;
                      ?>
                 <div class="grid-share">
-                <a style="position: relative; z-index:5; color:black" href="<?php echo $user->username;  ?>">
+                <a style="position: relative; z-index:5; color:black" href="#">
                             <img
                               src="assets/images/users/<?php echo $user->img; ?>"
                               alt=""
