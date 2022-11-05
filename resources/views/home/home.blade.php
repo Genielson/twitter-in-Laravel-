@@ -8,7 +8,7 @@
             <div class="">
               <div class="text-center">
                <span  class="modal-title font-weight-bold text-center" id="exampleModalLongTitle">
-                <span style="font-size: 20px;">Welcome <span style="color:#207ce5"><?php echo $user->name; ?></span>  </span>
+                <span style="font-size: 20px;">Welcome <span style="color:#207ce5"></span>  </span>
                </span>
               </div>
               <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -21,21 +21,12 @@
               <h4 style="font-weight: 600; " >You Signup Successfuly!</h4>
 
               </div>
-              <p>This is Twitter clone made by <span style="font-weight: 700;">Amin Yasser</span>  for learning purpose.</p>
-              <p>The clone includes tweet , retweet , qoute or even qoute the qouted tweet , like tweet and nested comments.
-                you can mention or add hashtag to yout tweet , change password or username.
-                Follow or unfollow people. get notificaction if any action happen. Search users by name or username. and more!
-              </p>
-              <p>By Signing Up then you followed
-                <a style="color:#207ce5;" href="amin">@amin</a>
-                  by default to see tweets. you can change it anytime!</p>
-            </div>
 
           </div>
         </div>
       </div>
 
-            <?php unset($_SESSION['welcome']); } ?>
+
 
             <!-- End welcome -->
 
@@ -63,9 +54,7 @@
                  <a href="notification.php">
                 <div class="grid-sidebar">
                   <div class="icon-sidebar-align position-relative">
-                      <?php if ($notify_count > 0) { ?>
-                    <i class="notify-count"><?php echo $notify_count; ?></i>
-                    <?php } ?>
+
                     <img
                       src="https://i.ibb.co/Gsr7qyX/notification.png"
                       alt=""
@@ -80,20 +69,20 @@
                 </div>
                 </a>
 
-                  <a href="<?php echo BASE_URL . $user->username; ?>">
+                  <a href="">
                 <div class="grid-sidebar">
                   <div class="icon-sidebar-align">
                     <img src="https://i.ibb.co/znTXjv6/perfil.png" alt="" height="26.25px" width="26.25px" />
                   </div>
 
                   <div class="wrapper-left-elements">
-                    <!-- <a href="/twitter/<?php echo $user->username; ?>"  style="margin-top: 4px"><strong>Profile</strong></a> -->
-                    <a  href="<?php echo BASE_URL . $user->username; ?>"  style="margin-top: 4px"><strong>Profile</strong></a>
+                    <!-- <a href="/twitter/"  style="margin-top: 4px"><strong>Profile</strong></a> -->
+                    <a  href=""  style="margin-top: 4px"><strong>Profile</strong></a>
 
                   </div>
                 </div>
                 </a>
-                <a href="<?php echo BASE_URL . "account.php"; ?>">
+                <a href="">
                 <div class="grid-sidebar ">
                   <div class="icon-sidebar-align">
                     <img src="https://i.ibb.co/znTXjv6/perfil.png" alt="" height="26.25px" width="26.25px" />
@@ -125,15 +114,14 @@
                   <div class="grid-user">
                     <div>
                       <img
-                        src="assets/images/users/<?php echo $user->img ?>"
+                        src="assets/images/users/"
                         alt="user"
                         class="img-user"
                       />
                     </div>
                     <div>
-                      <p class="name"><strong><?php if($user->name !== null) {
-                      echo $user->name; } ?></strong></p>
-                      <p class="username">@<?php echo $user->username; ?></p>
+                      <p class="name"><strong></strong></p>
+                      <p class="username">@</p>
                     </div>
                     <div class="mt-arrow">
                       <img
@@ -170,7 +158,7 @@
                             <form class="" action="handle/handleTweet.php" method="post" enctype="multipart/form-data">
                               <div class="inner">
 
-                                  <img src="assets/images/users/<?php echo $user->img ?>" alt="profile photo">
+                                  <img src="assets/images/users/" alt="profile photo">
 
                                 <label>
 
@@ -216,7 +204,7 @@
                                   foreach($_SESSION['errors_tweet'] as $t) {?>
 
                                 <div class="alert alert-danger">
-                                <span class="item2-pair"> <?php echo $t; ?> </span>
+                                <span class="item2-pair">  </span>
                                 </div>
 
                                <?php } } unset($_SESSION['errors_tweet']); ?>
@@ -245,7 +233,6 @@
                 </div>
                 <div class="box-fixed" id="box-fixed"></div>
 
-                <?php  include 'includes/tweets.php'; ?>
 
               </div>
 
@@ -270,47 +257,36 @@
 
                 <div class="box-share">
                   <p class="txt-share"><strong>Who to follow</strong></p>
-                  <?php
-                 // foreach($who_users as $user) {
-                    //  $u = User::getData($user->user_id);
-                   //  $user_follow = Follow::isUserFollow($user_id , $user->id) ;
-                     ?>
+
                 <div class="grid-share">
                 <a style="position: relative; z-index:5; color:black" href="#">
                             <img
-                              src="assets/images/users/<?php echo $user->img; ?>"
+                              src="assets/images/users/"
                               alt=""
                               class="img-share"
                             />
                           </a>
                           <div>
                             <p>
-                            <a style="position: relative; z-index:5; color:black" href="<?php echo $user->username;  ?>">
-                            <strong><?php echo $user->name; ?></strong>
+                            <a style="position: relative; z-index:5; color:black" href="">
+                            <strong></strong>
                             </a>
                           </p>
-                            <p class="username">@<?php echo $user->username; ?>
-                            <?php if (Follow::FollowsYou($user->id , $user_id)) { ?>
-                        <span class="ml-1 follows-you">Follows You</span></p>
-                        <?php } ?></p>
+                            <p class="username">@
+                            </p>
                           </div>
                           <div>
-                            <button class="follow-btn follow-btn-m
-                            <?= $user_follow ? 'following' : 'follow' ?>"
-                            data-follow="<?php echo $user->id; ?>"
-                            data-user="<?php echo $user_id; ?>"
-                            data-profile="<?php echo $u_id; ?>"
+                            <button class="follow-btn follow-btn-m"
+                            data-follow=""
+                            data-user=""
+                            data-profile=""
                             style="font-weight: 700;">
-                            <?php if($user_follow) { ?>
-                              Following
-                            <?php } else {  ?>
-                                Follow
-                              <?php }  ?>
+
                             </button>
                           </div>
                         </div>
 
-                        <?php }?>
+
 
 
                 </div>
