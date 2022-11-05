@@ -17,8 +17,12 @@
 
 
 
+    @yield('content')
 
-    <script src="assets/js/search.js"></script>
+
+
+
+          <script src="assets/js/search.js"></script>
           <script src="assets/js/photo.js?v=<?php echo time(); ?>"></script>
           <script type="text/javascript" src="assets/js/hashtag.js"></script>
           <script type="text/javascript" src="assets/js/like.js"></script>
