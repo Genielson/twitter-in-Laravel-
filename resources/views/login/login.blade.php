@@ -1,5 +1,30 @@
  @extends('login.basic')
  @section('content')
+
+
+ <main class="twt-main">
+    <section class="twt-login">
+
+        <form action="./handle/handlelogin.php" class="login-box" method="POST">
+            <input class="input-box" name="email" type="email"  placeholder="Email">
+            <input class="input-box" name="password" type="password" placeholder="Password">
+            <a class="login-link" href="#">Forgot password?</a>
+            <input type="submit" name="login" class="login-btn" value="Log in">
+
+            </div>
+        </form>
+
+
+            <div class="slow-login">
+                <img class="login-bird" src="https://image.ibb.co/d0hbJ9/twt_icon.png" alt="bird">
+                <button class="login-small-display signin-btn pri-btn">Log in</button>
+                <span class="front-para">See what’s happening in the world right now</span>
+                <span class="join">Join Twitter today.</span>
+                <button type="button" id="auto" onclick="" class="signup-btn pri-btn" data-toggle="modal" data-target="#exampleModalCenter">
+                    Sign Up</button>
+
+
+
  <!-- Modal -->
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
