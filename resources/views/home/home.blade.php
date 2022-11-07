@@ -251,10 +251,6 @@
                 </div>
                 </div>
 
-
-
-
-
                 <div class="box-share">
                   <p class="txt-share"><strong>Who to follow</strong></p>
 
