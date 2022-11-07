@@ -44,14 +44,15 @@ class User extends Authenticatable
 
 
     public function login($email,$password){
-
         $resultUser = User::where('email',$email)->where('password',$password)->get();
         if($resultUser == NULL){
             return false;
         }else{
+            session_start();
+            $_SESSION['iduser'] = $resultUser->id;
             return true;
         }
-
     }
+
 
 }
