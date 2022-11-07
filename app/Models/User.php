@@ -41,4 +41,17 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+    public function login($email,$password){
+
+        $resultUser = User::where('email',$email)->where('password',$password)->get();
+        if($resultUser == NULL){
+            return false;
+        }else{
+            return true;
+        }
+
+    }
+
 }
